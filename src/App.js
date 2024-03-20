@@ -20,6 +20,27 @@ function TodoApp() {
     setTodos(newTodos);
   };
 
+  const TodoList = ({ todos }) => {
+    return (
+      <ul>
+        {todos.map(todo => (
+          <li
+            key={todo.id}
+            style={{
+              backgroundColor: '#ffffff',
+              borderRadius: '5px',
+              padding: '10px',
+              marginBottom: '10px',
+              transition: 'background-color 0.3s ease'
+            }}
+          >
+            {todo.text}
+          </li>
+        ))}
+      </ul>
+    );
+  };
+
   return (
     <div>
       <h1>Todo List</h1>
@@ -42,6 +63,7 @@ function TodoApp() {
       </ul>
     </div>
   );
+  
 }
 
 export default TodoApp;
